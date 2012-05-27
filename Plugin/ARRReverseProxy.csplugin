@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" ?>
+<RoleModule namespace="ARRReverseProxy" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+	<Startup>
+		<Task commandLine="startup.cmd" executionContext="elevated" taskType="simple" />
+		<Task commandLine="ARRReverseProxy.exe" executionContext="elevated" taskType="background" />
+	</Startup>
+	<ConfigurationSettings>
+		<Setting name="Timeout" />
+	</ConfigurationSettings>
+	<Endpoints>
+    	<InputEndpoint name="ARRIn" protocol="tcp" port="80" />
+	</Endpoints>
+	<Certificates>
+	</Certificates>
+</RoleModule>
